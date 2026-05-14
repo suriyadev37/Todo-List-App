@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taskly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <div class="logo">
+      <div class="logo-dot"></div>
+      Taskly
+    </div>
+    <p class="tagline">Your tasks, simply.</p>
+  </header>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num total" id="statTotal">0</div>
+      <div class="stat-label">Total</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num done" id="statDone">0</div>
+      <div class="stat-label">Done</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num left" id="statLeft">0</div>
+      <div class="stat-label">Remaining</div>
+    </div>
+  </div>
+
+  <!-- Add Task -->
+  <div class="add-box">
+    <div class="add-row">
+      <input type="text" class="task-input" id="newTitle" placeholder="What needs to be done?" maxlength="250" />
+      <select class="pri-sel" id="newPri">
+        <option value="low">🟢 Low</option>
+        <option value="medium" selected>🟡 Medium</option>
+        <option value="high">🔴 High</option>
+      </select>
+      <button class="btn-add" id="addBtn">Add</button>
+    </div>
+    <div class="add-extras">
+      <input type="date" class="due-inp" id="newDue" />
+      <textarea class="notes-inp" id="newNotes" placeholder="Notes (optional)…" rows="2"></textarea>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <button class="f-btn active" data-f="all">All</button>
+    <button class="f-btn" data-f="active">Active</button>
+    <button class="f-btn" data-f="high">High Priority</button>
+    <button class="f-btn" data-f="today">Due Today</button>
+    <button class="f-btn" data-f="done">Completed</button>
+  </div>
+
+  <!-- Task list -->
+  <div class="task-list" id="taskList"></div>
+
+</div>
+
+<!-- Edit Modal -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Edit Task</h3>
+      <button class="modal-close" id="closeModal">✕</button>
+    </div>
+    <div class="modal-body">
+      <input type="text" id="editTitle" placeholder="Task title" maxlength="250" />
+      <textarea id="editNotes" placeholder="Notes…" rows="3"></textarea>
+      <div class="modal-row">
+        <select id="editPri">
+          <option value="low">🟢 Low</option>
+          <option value="medium">🟡 Medium</option>
+          <option value="high">🔴 High</option>
+        </select>
+        <input type="date" id="editDue" />
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn-del" id="delBtn">Delete</button>
+      <div style="display:flex;gap:8px;">
+        <button class="btn-cancel" id="cancelModal">Cancel</button>
+        <button class="btn-save" id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
