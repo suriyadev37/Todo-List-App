@@ -9,9 +9,19 @@ Manage daily tasks with priorities, due dates, filters, statistics dashboard, an
 
 📸 Preview
 
-<img width="100%" alt="Taskly Preview" src="https://suriyadev37.github.io/Todo-List-App/preview.png">
-<br>
-<img width="100%" alt="Taskly Preview" src="https://suriyadev37.github.io/Todo-List-App/preview1.png">
+<div style="display:flex; gap:50px; justify-content:center; flex-wrap:wrap;">
+
+  <img 
+    width="409" 
+    alt="Taskly Preview" 
+    src="https://suriyadev37.github.io/Todo-List-App/preview.png">
+  <img 
+    width="400" 
+    alt="Taskly Preview 1" 
+    src="https://suriyadev37.github.io/Todo-List-App/preview1.png">
+
+</div>
+
 
 ✨ Features
 
